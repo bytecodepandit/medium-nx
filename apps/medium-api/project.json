@@ -1,0 +1,53 @@
+{
+  "name": "medium-api",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/medium-api/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/medium-api",
+        "main": "apps/medium-api/src/main.ts",
+        "tsConfig": "apps/medium-api/tsconfig.app.json",
+        "assets": ["apps/medium-api/src/assets"],
+        "webpackConfig": "apps/medium-api/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "medium-api:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "medium-api:build:development"
+        },
+        "production": {
+          "buildTarget": "medium-api:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/medium-api/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

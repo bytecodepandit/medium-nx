@@ -1,4 +1,6 @@
 import styles from './page.module.scss';
+import { utils } from '@medium/utils';
+import { Header } from '@medium/components';
 
 export default async function Index() {
   /*
@@ -11,8 +13,9 @@ export default async function Index() {
       <div className="wrapper">
         <div className="container">
           <div id="welcome">
+            <Header />
             <h1>
-              <span> Hello there, </span>
+              <span> Hello there,{utils()}</span>
               Welcome medium-web 👋
             </h1>
           </div>
