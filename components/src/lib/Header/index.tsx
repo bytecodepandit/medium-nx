@@ -1,13 +1,18 @@
+import React from 'react';
 import styles from './Header.module.scss';
+import PostLoginHeader from './PostLoginHeader';
+import PreLoginHeader from './PreLoginHeader';
 
 /* eslint-disable-next-line */
-export interface HeaderProps {}
+export interface HeaderProps {
+  authorized?: boolean;
+}
 
-export function Header(props: HeaderProps) {
+export function Header({authorized}: HeaderProps) {
   return (
-    <div className={styles['container']}>
-      <h1>Welcome to Header!</h1>
-    </div>
+    <React.Fragment>
+      {authorized ? <PostLoginHeader/> : <PreLoginHeader />}
+    </React.Fragment>
   );
 }
 
