@@ -1,17 +1,10 @@
 import { ArticleCard, Header, PreLoginBanner, TrendingArticleCard } from '@medium/components';
-import { ReactComponent as BannerImage } from './assets/pre-login-banner.svg'
+import { ReactComponent as BannerImage } from '../../assets/pre-login-banner.svg'
 
 export default function PreLoginHomePage() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.scss file.
-   */
   return (
     <div>
       <div className='ag ah ai'>
-        <Header />
-        <div className="bb ah"></div>
         <PreLoginBanner bannerSvgImage={<BannerImage />} />
       </div>
 
