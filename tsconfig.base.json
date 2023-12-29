@@ -17,6 +17,7 @@
     "paths": {
       "@medium/components": ["components/src/index.ts"],
       "@medium/hooks": ["hooks/src/index.ts"],
+      "@medium/store": ["store/src/index.ts"],
       "@medium/utils": ["utils/src/index.ts"]
     }
   },

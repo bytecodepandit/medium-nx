@@ -1,5 +1,7 @@
-import { ArticleCard, Header, PreLoginBanner, TrendingArticleCard } from '@medium/components';
+'use client'
+import { ArticleCard, PreLoginBanner, TrendingArticleCard } from '@medium/components';
 import { ReactComponent as BannerImage } from '../../assets/pre-login-banner.svg'
+import { useAppSelector } from '@medium/hooks'
 
 export default function PreLoginHomePage() {
   return (

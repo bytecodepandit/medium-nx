@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Hooks from './hooks';
+import Store from './store';
 
-describe('Hooks', () => {
+describe('Store', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Hooks />);
+    const { baseElement } = render(<Store />);
     expect(baseElement).toBeTruthy();
   });
 });
