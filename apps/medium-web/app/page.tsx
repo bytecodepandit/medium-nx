@@ -1,17 +1,16 @@
-import styles from './page.module.scss';
-import { utils } from '@medium/utils';
-import { Header } from '@medium/components';
-import logo from './assets/clap.svg'
+import React from 'react';
+import PostLoginHomePage from './PostLoginHomePage';
+import PreLoginHomePage from './PreLoginHomePage';
+import { LoginModal } from '@medium/components';
 
-export default async function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.scss file.
-   */
+
+export default async function App() {
+  const res = await fetch('http://localhost:3000/api')
+  const data = await res.json();
   return (
-    <div>
-      <Header />
-    </div>
+    <React.Fragment>
+      {data.isAuthorized ? <PostLoginHomePage /> : <PreLoginHomePage />}
+      {/* <LoginModal /> */}
+    </React.Fragment>
   );
 }

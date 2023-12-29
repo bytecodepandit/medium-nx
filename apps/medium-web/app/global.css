@@ -279,6 +279,20 @@ div[data-popper-reference-hidden='true'] {
   grid-template-rows: 1fr;
 }
 
+.mm {
+  right: 0px;
+}
+
+.mj {
+  width: 585px;
+}
+.jn {
+  position: absolute;
+}
+.ah {
+  display: block;
+}
+
 .ag {
   border-bottom: 1px solid #242424;
 }
